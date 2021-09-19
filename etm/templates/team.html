@@ -1,0 +1,51 @@
+{%extends "base.html"%}
+
+{%block title%}
+ETM-Team
+{%endblock%}
+
+
+{%block style%}
+
+
+#team{
+color : #f8f9fa;
+}
+
+
+
+{%endblock%}
+
+
+{%block script%}
+
+{%endblock%}
+
+
+{%block body%}
+
+<div class="container-fluid d-flex justify-content-center mt-3">
+
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  {%for i in userdata%}
+  <div class="col">
+    <div class="card h-100">
+<!--Below code is for retrive image from sql database.-->
+<!--      <img src="media/{{i.image}}" class="card-img-top" alt="...">-->
+        <img src="{{i.link}}">
+      <div class="card-body">
+        <h5 class="card-title">{{i.name}}</h5>
+        <p class="card-text">{{i.role}}</p>
+        <a href="tel:{{i.phone}}" class="btn btn-dark">Call Me</a>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+
+
+ </div>
+
+
+{%endblock%}

@@ -1,0 +1,56 @@
+{%extends "base.html"%}
+
+{%block title%}
+ETM-Task
+{%endblock%}
+
+
+{%block style%}
+
+#task{
+color : #f8f9fa;
+}
+
+{%endblock%}
+
+
+{%block script%}
+
+{%endblock%}
+
+
+{%block body%}
+
+<div class="container-fluid  d-flex mt-3 justify-content-center">
+
+
+  <div class="row row-cols-1 row-cols-md-4 g-1 ">
+<!--g-1 was g-5 before changing-->
+
+{%for i in userdata%}
+
+    <div class="card border-dark mx-2 mt-2" style="width: 18rem;" >
+<!--  <img src="..." class="card-img-top" alt="...">-->
+  <div class="card-body">
+    <h5 class="card-title">{{i.task}}</h5>
+    <h7 class = "card-text">{{i.project}}</h7>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><p class="text-justify">{{i.details}}</p> </li>
+    <li class="list-group-item"><b>Allocation date:</b> {{i.allocation}} </li>
+    <li class="list-group-item"><b>Deadline :</b> {{i.deadline}}</li>
+  </ul>
+  <div class="card-body mx-auto ">
+    <a href="{{i.docs}}" class="btn btn-danger" target="_blank">Docx</a>
+    <a href="#" class="btn btn-danger">Submit</a>
+  </div>
+</div>
+{%endfor%}
+
+  </div>
+  </div>
+
+
+
+
+{%endblock%}

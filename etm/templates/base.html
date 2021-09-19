@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>{%block title%}{%endblock%}</title>
+
+    <style>
+        {%block style%}{%endblock%}
+    </style>
+
+    <script>
+
+        {%block script%}{%endblock%}
+
+    </script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+<!--    <a class="navbar-brand" href="#" >ETM</a>-->
+    {%load static%}
+    <img src="{%static 'etm.png'%}" height="30px" >
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class=" nav-item">
+          <a class="nav-link " id="profile" href="profile">Profile</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" id="task" href="task">Task</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" id="team" href="team">Team</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" id="meet" href="meet">Meeting</a>
+        </li>
+
+
+      </ul>
+      <form class="d-flex" action="#">
+
+        <button class="btn btn-outline-primary" type="submit">Log Out</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+{%block body%}{%endblock%}
+</body>
+</html>

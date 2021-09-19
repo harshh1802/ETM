@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter</title>
+</head>
+<body>
+<form action="filter" method="post">
+    Enter Value <input type="text" placeholder="role" name="role">
+
+    <button type="submit">Filter</button>{%csrf_token%}
+</form>
+
+<!--<img src="https://thumbs2.imgbox.com/74/cf/wR0VxhJZ_t.jpg">-->
+{%load static%}
+
+
+{%for i in list%}
+<h1>{{i}}</h1>
+{%endfor%}
+
+
+</body>
+</html>

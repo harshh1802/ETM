@@ -1,0 +1,57 @@
+{%extends "base.html"%}
+
+{%block title%}
+ETM-Meet
+{%endblock%}
+
+
+{%block style%}
+
+#meet{
+color : #f8f9fa;
+}
+
+{%endblock%}
+
+
+{%block script%}
+
+{%endblock%}
+
+
+{%block body%}
+
+
+<div class="container-fluid d-flex mt-3 justify-content-center">
+
+
+  <div class="row row-cols-1 row-cols-md-4 g-5 ">
+
+{%for i in userdata%}
+
+    <div class="card border-dark mx-2" style="width: 18rem;" >
+<!--  <img src="https://thumbs2.imgbox.com/51/46/pWpflDbm_t.jpg" class="card-img-top" alt="...">-->
+  <div class="card-body">
+    <h5 class="card-title">{{i.tittle}}</h5>
+    <h7 class = "card-text">{{i.project}}</h7>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><p class="text-justify">{{i.details}}</p> </li>
+    <li class="list-group-item"><b>Meeting Date:</b>{{i.date}}</li>
+    <li class="list-group-item"><b>Hosted By:</b>{{i.host}}</li>
+  </ul>
+  <div class="card-body mx-auto">
+    <a href="{{i.link}}" class="btn btn-dark" target="_blank">Join Meeting</a>
+<!--    <a href="#" class="btn btn-danger">Submit</a>-->
+  </div>
+</div>
+
+    {%endfor%}
+
+
+  </div>
+  </div>
+
+
+
+{%endblock%}
